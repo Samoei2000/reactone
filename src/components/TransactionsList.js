@@ -1,9 +1,22 @@
 import React from "react";
 import Transaction from "./Transaction";
+ 
 
-function TransactionsList() {
+function TransactionsList({transactions}) {
+  
   return (
-    <table className="ui celled striped padded table">
+    <table className="ui celled striped paddedbody:JSON.stringify(data),
+  }).then((res) =>{
+    if(res.ok){
+      setListOfTransactions (prevState => [...prevState, data]);
+    }
+  })
+  .catch(error)(
+    console.log(error)
+  )
+
+  
+} table">
       <tbody>
         <tr>
           <th>
@@ -19,7 +32,10 @@ function TransactionsList() {
             <h3 className="ui center aligned header">Amount</h3>
           </th>
         </tr>
-        {/* render a list of <Transaction> components here */}
+        
+        {transactions.map((transaction, index) => (
+          <Transaction key={index} transaction={transaction} />
+        ))}
       </tbody>
     </table>
   );
