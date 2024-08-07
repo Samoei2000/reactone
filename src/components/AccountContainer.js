@@ -24,7 +24,7 @@ function AccountContainer() {
     <div>
       <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <AddTransactionForm />
-      <TransactionsList transactions={transactions} />
+      <TransactionsList transactions={transactions} listOfTransactions={listOfTransactions} />
     </div>
   );
 }

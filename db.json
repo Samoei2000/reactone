@@ -125,6 +125,13 @@
       "description": "movies",
       "category": "entertainment",
       "amount": "1"
+    },
+    {
+      "id": "f60b",
+      "date": "2024-08-08",
+      "description": "school fare",
+      "category": "transport",
+      "amount": "5"
     }
   ]
 }

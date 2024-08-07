@@ -5,18 +5,7 @@ import Transaction from "./Transaction";
 function TransactionsList({transactions}) {
   
   return (
-    <table className="ui celled striped paddedbody:JSON.stringify(data),
-  }).then((res) =>{
-    if(res.ok){
-      setListOfTransactions (prevState => [...prevState, data]);
-    }
-  })
-  .catch(error)(
-    console.log(error)
-  )
-
-  
-} table">
+    <table className="ui celled striped padded table">
       <tbody>
         <tr>
           <th>
