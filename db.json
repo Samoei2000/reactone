@@ -132,6 +132,27 @@
       "description": "school fare",
       "category": "transport",
       "amount": "5"
+    },
+    {
+      "id": "8cbd",
+      "date": "",
+      "description": "",
+      "category": "",
+      "amount": ""
+    },
+    {
+      "id": "dcb2",
+      "date": "2024-08-08",
+      "description": "check",
+      "category": "income",
+      "amount": "222"
+    },
+    {
+      "id": "88a0",
+      "date": "2024-08-08",
+      "description": "check",
+      "category": "income",
+      "amount": "222"
     }
   ]
 }

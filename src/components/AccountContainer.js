@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from "react";
 import TransactionsList from "./TransactionsList";
 import Search from "./Search";
@@ -9,7 +7,8 @@ function AccountContainer() {
   const [listOfTransactions, setListOfTransactions] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const transactions = listOfTransactions.filter((transaction) =>
+  
+  const filteredTransactions = listOfTransactions.filter((transaction) =>
     transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -20,14 +19,30 @@ function AccountContainer() {
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
 
+  function handleNewTransaction(newTransaction) {
+    fetch('http://localhost:8001/transactions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newTransaction),
+    })
+      .then((res) => res.json())
+      .then((addedTransaction) => {
+        setListOfTransactions((prev) => [...prev, addedTransaction]);
+      })
+      .catch((error) => console.log(error));
+  }
+
+
   return (
     <div>
       <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-      <AddTransactionForm />
-      <TransactionsList transactions={transactions} listOfTransactions={listOfTransactions} />
+      <AddTransactionForm  onSubmission={handleNewTransaction}/>
+      <TransactionsList  listOfTransactions={filteredTransactions} />
+      
     </div>
   );
 }
 
 export default AccountContainer;
-
